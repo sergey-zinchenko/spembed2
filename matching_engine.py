@@ -116,7 +116,7 @@ class MatchingEngine(Generic[SI, SNI]):
                 matched_indexes.append(i)
                 result[self.__right_items[i]] = best_matches[i]
         if self.__logger:
-            self.__logger.info(f"Validated {len(matches)} matches")
+            self.__logger.info(f"Validated {len(best_matches)} matches")
 
         self.__right_items = np.delete(self.__right_items, matched_indexes).tolist()
         self.__last_right_embeddings = np.delete(right_embeddings, matched_indexes, axis=0)
